@@ -1,5 +1,6 @@
 ### Dávkově přidat knihy
 POST {{baseURL}}/batch
+//POST http://localhost:8080/api/batch
 Content-Type: application/json
 
 [
@@ -35,7 +36,8 @@ Content-Type: application/json
 ]
 
 ### Přidat knihu
-POST {{baseURL}}
+//POST {{baseURL}}
+POST http://localhost:8080/api/
 Content-Type: application/json
 
 {

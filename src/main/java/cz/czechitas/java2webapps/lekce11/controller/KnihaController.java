@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Filip Jirsák
@@ -35,6 +36,26 @@ public class KnihaController {
     @PostMapping("/")
     public Kniha pridat(@RequestBody Kniha kniha) {
         return service.pridat(kniha);
+    }
+
+    @DeleteMapping("/{id}")
+    public Kniha smazat(@PathVariable long id) {
+        return service.smazat(id);
+    }
+
+    @PostMapping("/{id}/obnovit")
+    public Kniha obnovit(@PathVariable long id) {
+        return service.obnovit(id);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Kniha> detail(@PathVariable long id) {
+        return service.detail(id);
+    }
+
+    @PutMapping("/{id}")
+    public Kniha upravit(@PathVariable long id, @RequestBody Kniha kniha) {
+        return service.upravit(kniha);
     }
 
     @PostMapping("/batch")
